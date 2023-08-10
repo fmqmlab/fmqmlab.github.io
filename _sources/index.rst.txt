@@ -1,0 +1,60 @@
+.. pyDPE-Web documentation master file, created by
+   sphinx-quickstart on Fri Jun 30 15:40:06 2023.
+
+Welcome to PyDPE-Web!
+=======================
+
+.. role:: raw-html(raw)
+   :format: html
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   Quickstart
+   docs
+   Examples
+
+This website hosts the web-based version of the PyDPE package developed by the Fahad Mahmood Group. This package plots a raw image file from our ARTOF detector, and shows the regions of the Brillouin zone where double photon emission might be observed. PyDPE-Web has no dependencies and can be run directly on your browser. Click on "QuickStart" to try it out!
+
+If you would prefer to download the original PyDPE package locally, you can do so by heading to the "Additional Resources" section of our :doc:`Documentation <docs>`.
+
+.. raw:: html
+
+   <div id = "browser-warning">
+       <div class="admonition warning" id = "browser-version">
+            <p class="admonition-title">Warning</p>
+                <p> The recommended broswer for PyDPE-web is Google Chrome. There are known compatibility issues with Safari and Firefox and we're working on fixing these. Please consider switching your browser to Chrome if you face issues with a different browser. </p>
+        </div>
+   </div>
+
+.. grid:: 2
+    :gutter: 3
+
+    .. grid-item-card:: :octicon:`zap;1em;sd-text-info` :raw-html:`&nbsp;` Quickstart
+        :link-type: doc
+        :link: Quickstart
+
+        Try PyDPE-Web now!
+
+    .. grid-item-card:: :octicon:`book;1em;sd-text-info` :raw-html:`&nbsp;` Documentation
+        :link-type: doc
+        :link: docs
+
+        If this is your first time using PyDPE and you are unsure where to begin, check out our documentation section
+
+    .. grid-item-card:: :octicon:`code;1em;sd-text-info` :raw-html:`&nbsp;` Examples
+        :link-type: doc
+        :link: Examples
+
+        Familiarize yourself with our web interface by browsing through some example outputs created using raw data from the FM Lab
+
+    .. grid-item-card:: :octicon:`link-external;1em;sd-text-info` :raw-html:`&nbsp;` FM Lab Website
+        :link-type: url
+        :link: https://sites.google.com/illinois.edu/fmlab
+
+        Check out the main FM Lab Wesbite for more information on our group, techniques, publications and openings
+
+
+
+

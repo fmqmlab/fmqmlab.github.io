@@ -1,0 +1,1 @@
+This python collection describes what regions of the Fermi surface are visible at a given photon energy and sample tilt angle.
