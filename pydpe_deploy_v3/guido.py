@@ -5,6 +5,7 @@ from js import document, console, Uint8Array, window, File
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as img
+from PIL import Image
 
 import skimage.color
 
@@ -37,8 +38,22 @@ def dpe_mod(image_file, extent_x, extent_y, theta_s, phi_s, rotation_s,hv,wf, FO
     if image_file != getattr(dpe_mod, "loaded_filename", None) or extent_list != getattr(dpe_mod, 'loaded_extent', None) :
         dpe_mod.loaded_filename = image_file
         dpe_mod.loaded_extent = extent_list
-        image_rgb = img.imread(image_file)
-        data = skimage.color.rgb2gray(skimage.color.rgba2rgb(image_rgb))
+
+
+        #Bug in Pyodide's matplotlib.image.imread() - accepts only png. Replacing with Pillow's Image.open() - Fixed
+        image_rgb = Image.open(image_file)
+        mode = image_rgb.mode
+
+        
+        #Change to PIL.Image.convert() in future? Eliminates skimage dependency entirely...
+        if mode == 'RGBA' or mode == 'RGBa':
+            data = skimage.color.rgb2gray(skimage.color.rgba2rgb(image_rgb)) #rgba2rgb expects a 4 channel image, else throws error, so check if we have 4 channels first
+        elif mode == 'L' or mode == '1':
+            data = image_rgb #if image is already grayscale, nothing to be done
+        else:
+            data = skimage.color.rgb2gray(image_rgb) #if image is RGB, convert to grayscale
+
+
         dpe_mod.loaded_data = xr.DataArray(data.transpose(), dims=['kx', 'ky'], coords={'ky':np.linspace(extent_list[1], extent_list[0], data.shape[0]),
                                                   'kx':np.linspace(extent_list[2], extent_list[3], data.shape[1])})
 

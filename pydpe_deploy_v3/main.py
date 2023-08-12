@@ -4,14 +4,6 @@ import io
 from pyodide.ffi import create_proxy
 import guido
 
-
-#Check to see if the uploaded file is not a png file. Used for Exception handling
-def _wrong_filetype(file):
-        if "png" not in file.type:
-                return True
-        
-        return False
-
 async def on_click(event):
 
 	#original code by Jeff Glass at https://jeff.glass/post/pyscript-image-upload/
@@ -25,10 +17,6 @@ async def on_click(event):
 	#image_div = document.getElementById("user_image")
 	file_list = document.getElementById("user_image").files
 	first_item = file_list.item(0)
-
-	if _wrong_filetype(first_item):
-                document.getElementById("graph-area").innerText = "Please upload a PNG file"
-                return
 
     #Get the data from the files arrayBuffer as an array of unsigned bytes
 	array_buf = Uint8Array.new(await first_item.arrayBuffer())
