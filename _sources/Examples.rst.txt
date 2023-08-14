@@ -1,4 +1,0 @@
-Examples
-#############
-
-This page is a placeholder for some examples images produced by PyDPE
