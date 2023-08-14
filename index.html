@@ -16,6 +16,20 @@
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+
+    function viewSource(){;
+      var source = "<html>";
+      source += document.getElementsByTagName('html')[0].innerHTML;
+      source += "</html>";
+      source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      source = "<pre>"+source+"</pre>";
+      sourceWindow = window.open('','Source of page','height=800,width=800,scrollbars=1,resizable=1');
+      sourceWindow.document.write(source);
+      sourceWindow.document.body.style.background = '#121212';
+      sourceWindow.document.body.style.color = '#FFFFFF';
+      sourceWindow.document.close(); 
+      if(window.focus) sourceWindow.focus();
+    }
   </script>
   
   <!-- Loaded before other Sphinx assets -->
@@ -357,7 +371,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="_sources/index.rst.txt">
+    <a href="" onclick="viewSource()">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
