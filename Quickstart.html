@@ -318,39 +318,70 @@
   <section id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h1>
 <p>The recommended broswer for PyDPE-web is Google Chrome. There are known compatibility issues with Safari and Firefox and we’re working on fixing these. Please consider switching your browser to Chrome if you face issues with a different browser. If this page is taking too long to load, or producing unexpected results, try <span class="raw-html"><a href="https://its.uiowa.edu/support/article/719" target="_blank">clearing your browser's cache</a></span> and then re-loading the website.</p>
+
+<div class="admonition seealso">
+<p class="admonition-title">Tip</p>
+<p>Hovering over the input boxes reveals their documentation! <b>Scroll to the bottom of the page to see the result</b></p>
+</div>
+
+<p>Here's an image of the manipulator for convenience:
+<img alt="_images/manipulator_image.png" src="_images/manipulator_image.png" width="600px"> </p>
+
 <hr>
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="The raw image file from the detector. Any image format is accepted (.png, .jpeg, .jpg etc.)">
 <label for = "user_image">Image file:</label> &nbsp;
 <input type = "file" accept = "image/*" id = "user_image">
+</span>
 <br><br>
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="kx_min/kx_max together define the range in k-space over the x-axis that the image covers" data-bs-delay=0 >
 <label for = "kxmin">kx_min:</label> &nbsp;
 <input type = "number" class = 'pydpe-input' id = "kxmin" min = "-2" max = "2" step = "0.01" value = "-1.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="kx_min/kx_max together define the range in k-space over the x-axis that the image covers" data-bs-delay=0 >
 <label for = "kxmax">kx_max:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "kxmax" min = "-2" max = "2" step = "0.01" value = "1.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="The sample polar rotation (in degrees)" data-bs-delay=0 >
 <label for = "theta_s">&theta;<sub>s</sub>:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "theta_s" min=75 max=105 step=0.2 value="90.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="Rotation about the normal axis of the sample (in degrees)" data-bs-delay=0 >
 <label for = "rotation_s">rotation_s:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "rotation_s" min=0 max=360 step=2 value="0.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="Work function of the sample in ev" data-bs-delay=0 >
 <label for = "wf">wf:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "wf" min=3 max=7 step=0.01 value="4.50">
+</span>
 <br><br>
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="ky_min/ky_max together define the range in k-space over the y-axis that the image covers" data-bs-delay=0 >
 <label for = "kymin">ky_min:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "kymin" min = "-2" max = "2" step = "0.01" value = "-1.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="ky_min/ky_max together define the range in k-space over the y-axis that the image covers" data-bs-delay=0 >
 <label for = "kymax">ky_max:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "kymax" min = "-2" max = "2" step = "0.01" value = "1.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="The sample azimuthal rotation (in degrees)" data-bs-delay=0 >
 <label for = "phi_s">&phi;<sub>s</sub>:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "phi_s" min=-15 max=105 step=1 value="45.00">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="The photon energy in ev" data-bs-delay=0 >
 <label for = "hv">h&nu;:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "hv"  min=0 max=40 step=0.01 value="22.80">
+</span>
 &emsp;
+<span data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-trigger="hover" data-bs-original-title="The Field of View that each detector ”sees” from the sample" data-bs-delay=0 >
 <label for = "FOV">FOV:</label> &nbsp;
 <input type = "number"  class = 'pydpe-input' id = "FOV" min=5 max=20 step = 0.1 value="15.00">
+</span>
 &emsp;
 <br><br>
 <div class = "submit-center">
